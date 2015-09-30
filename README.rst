@@ -60,13 +60,15 @@ these options:
    applied to limit the in-memory structure as closely as possible to
    only the item currently being parsed and its ancestors (and possibly
    anchored nodes).
-   -  This internal representation exists to allow the resolver to :
-      perform path-based resolution. Presently (as of PyYAML 3.11), the
-      paths used for resolution are narrowly enough defined that the
-      limited structure works more or less exactly as well as the full
-      structure. If they become advanced enough to, for example, query
-      siblings (and if anyone actually uses that functionality), the
-      limitations may need to be disabled.
+
+   - This internal representation exists to allow the resolver to :
+       perform path-based resolution. Presently (as of PyYAML 3.11), the
+       paths used for resolution are narrowly enough defined that the
+       limited structure works more or less exactly as well as the full
+       structure. If they become advanced enough to, for example, query
+       siblings (and if anyone actually uses that functionality), the
+       limitations may need to be disabled.
+
 -  ``flat`` (default ``False``): If set, the processor yields events
    directly rather than grouping them into documents. If it is clear,
    the processor instead yields one generator per document which itself
@@ -75,12 +77,14 @@ these options:
    and ``ElementEndEvent`` are included in the output. If clear, they
    are omitted. If ``None``, they are included if ``flat`` is set but
    omitted otherwise.
-   -  If ``including_ends`` is set and ``flat`` is clear, two additional
-      : generators are yielded in addition to the generators for each
-      document: before the first document's generator, a generator is
-      produced that yields only the ``ElementStartEvent``, and after the
-      last document's generator, a generator is produced that will yield
-      only the ``ElementEndEvent``.
+
+   - If ``including_ends`` is set and ``flat`` is clear, two additional
+       : generators are yielded in addition to the generators for each
+       document: before the first document's generator, a generator is
+       produced that yields only the ``ElementStartEvent``, and after
+       the last document's generator, a generator is produced that will
+       yield only the ``ElementEndEvent``.
+
 -  ``resolving_tags`` (default ``True``): If set, the resolver's rules
    are applied to rewrite the tags that appear in ``ScalarEvent``,
    ``SequenceStartEvent``, and ``MappingStartEvent``. If clear, the
@@ -95,10 +99,12 @@ these options:
    output to mark the starts and ends of sequence elements, mapping
    pairs, mapping pair keys, and mapping pair values. If clear, these
    events are not added.
+
    -  Each of these events indicates a zero-width event; each has a
       ``start_mark`` and an ``end_mark`` that are identical, set by the
       ``mark`` parameter of the constructor.
    -  The events are:
+
       -  ``yaml_elaborate.events.ElementStartEvent(index)``: Occurs
          immediately before the element value. ``index`` is 0-based from
          the start of the sequence as parsed.
