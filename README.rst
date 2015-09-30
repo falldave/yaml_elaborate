@@ -61,13 +61,13 @@ these options:
    only the item currently being parsed and its ancestors (and possibly
    anchored nodes).
 
-   - This internal representation exists to allow the resolver to :
-       perform path-based resolution. Presently (as of PyYAML 3.11), the
-       paths used for resolution are narrowly enough defined that the
-       limited structure works more or less exactly as well as the full
-       structure. If they become advanced enough to, for example, query
-       siblings (and if anyone actually uses that functionality), the
-       limitations may need to be disabled.
+   -  This internal representation exists to allow the resolver to
+      perform path-based resolution. Presently (as of PyYAML 3.11), the
+      paths used for resolution are narrowly enough defined that the
+      limited structure works more or less exactly as well as the full
+      structure. If they become advanced enough to, for example, query
+      siblings (and if anyone actually uses that functionality), the
+      limitations may need to be disabled.
 
 -  ``flat`` (default ``False``): If set, the processor yields events
    directly rather than grouping them into documents. If it is clear,
@@ -78,12 +78,12 @@ these options:
    are omitted. If ``None``, they are included if ``flat`` is set but
    omitted otherwise.
 
-   - If ``including_ends`` is set and ``flat`` is clear, two additional
-       : generators are yielded in addition to the generators for each
-       document: before the first document's generator, a generator is
-       produced that yields only the ``ElementStartEvent``, and after
-       the last document's generator, a generator is produced that will
-       yield only the ``ElementEndEvent``.
+   -  If ``including_ends`` is set and ``flat`` is clear, two additional
+      generators are yielded in addition to the generators for each
+      document: before the first document's generator, a generator is
+      produced that yields only the ``ElementStartEvent``, and after the
+      last document's generator, a generator is produced that will yield
+      only the ``ElementEndEvent``.
 
 -  ``resolving_tags`` (default ``True``): If set, the resolver's rules
    are applied to rewrite the tags that appear in ``ScalarEvent``,
@@ -137,4 +137,4 @@ warranty.
 
 You should have received a copy of the CC0 Public Domain Dedication
 along with this software. If not, see
-` <http://creativecommons.org/publicdomain/zero/1.0/>`__.
+<http://creativecommons.org/publicdomain/zero/1.0/>.
