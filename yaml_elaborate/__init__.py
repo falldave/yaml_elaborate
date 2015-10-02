@@ -7,6 +7,7 @@ from builtins import *
 
 import yaml
 from .elaborator import Elaborator, ElaboratorSettings
+from .saxifier import Saxifier
 
 def _collapse(*dicts):
     result = {}
@@ -32,4 +33,7 @@ def process_stream(stream, Loader=yaml.Loader, **kwargs):
         for ee in elaborator.process(): yield ee
     finally:
         loader.dispose()
+
+def saxify_event_stream(event_stream, sax_handler, **kwargs):
+    return Saxifier(event_stream, sax_handler, **kwargs).run()
 
